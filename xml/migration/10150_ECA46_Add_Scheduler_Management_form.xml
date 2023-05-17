@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <Migrations>
-  <Migration EntityType="ECA46" Name="ECA46 Add Scheduler Management form" ReleaseNo="3.9.5" SeqNo="10150">
+  <Migration EntityType="ECA46" Name="ECA46 Add Task Manager form" ReleaseNo="3.9.5" SeqNo="10150">
     <Step SeqNo="10" StepType="AD">
       <PO AD_Table_ID="376" Action="I" Record_ID="53088" Table="AD_Form">
         <Data AD_Column_ID="4597" Column="AD_Client_ID">0</Data>
         <Data AD_Column_ID="4596" Column="AD_Form_ID">53088</Data>
         <Data AD_Column_ID="4598" Column="AD_Org_ID">0</Data>
         <Data AD_Column_ID="5791" Column="AccessLevel">7</Data>
-        <Data AD_Column_ID="4607" Column="Classname">org.spin.eca46.form.tasks</Data>
+        <Data AD_Column_ID="4607" Column="Classname">org.spin.eca46.form.TaskManager</Data>
         <Data AD_Column_ID="4600" Column="Created">2023-05-17 12:29:42.315</Data>
         <Data AD_Column_ID="4601" Column="CreatedBy">100</Data>
         <Data AD_Column_ID="4605" Column="Description">Automates the execution of processes and tasks</Data>
@@ -16,7 +16,7 @@
         <Data AD_Column_ID="4599" Column="IsActive">true</Data>
         <Data AD_Column_ID="12738" Column="IsBetaFunctionality">false</Data>
         <Data AD_Column_ID="13022" Column="JSPURL" isNewNull="true"/>
-        <Data AD_Column_ID="4604" Column="Name">Scheduler Management</Data>
+        <Data AD_Column_ID="4604" Column="Name">Task Manager</Data>
         <Data AD_Column_ID="84325" Column="UUID">bf8e738e-67ed-4458-9fa4-1d109229a47f</Data>
         <Data AD_Column_ID="4602" Column="Updated">2023-05-17 12:29:42.315</Data>
         <Data AD_Column_ID="4603" Column="UpdatedBy">100</Data>
@@ -34,7 +34,7 @@
         <Data AD_Column_ID="4619" Column="Help" isNewNull="true"/>
         <Data AD_Column_ID="4612" Column="IsActive">true</Data>
         <Data AD_Column_ID="4620" Column="IsTranslated">true</Data>
-        <Data AD_Column_ID="4617" Column="Name">Gestión de Programador de Tareas</Data>
+        <Data AD_Column_ID="4617" Column="Name">Programador de Tareas</Data>
         <Data AD_Column_ID="84327" Column="UUID">83f0efb6-4cf9-4f72-945f-b78107036857</Data>
         <Data AD_Column_ID="4615" Column="Updated">2023-05-17 12:29:43.798</Data>
         <Data AD_Column_ID="4616" Column="UpdatedBy">100</Data>
@@ -62,7 +62,7 @@
         <Data AD_Column_ID="6651" Column="IsReadOnly">false</Data>
         <Data AD_Column_ID="4426" Column="IsSOTrx">false</Data>
         <Data AD_Column_ID="1169" Column="IsSummary">false</Data>
-        <Data AD_Column_ID="229" Column="Name">Scheduler Management</Data>
+        <Data AD_Column_ID="229" Column="Name">Task Manager</Data>
         <Data AD_Column_ID="84344" Column="UUID">2b306e67-5b5f-4594-a556-51e1e98209af</Data>
         <Data AD_Column_ID="601" Column="Updated">2023-05-17 13:50:22.992</Data>
         <Data AD_Column_ID="602" Column="UpdatedBy">100</Data>
@@ -79,7 +79,7 @@
         <Data AD_Column_ID="248" Column="Description">Automatiza la ejecución de procesos y tareas</Data>
         <Data AD_Column_ID="636" Column="IsActive">true</Data>
         <Data AD_Column_ID="249" Column="IsTranslated">true</Data>
-        <Data AD_Column_ID="247" Column="Name">Gestión de Programador de Tareas</Data>
+        <Data AD_Column_ID="247" Column="Name">Programador de Tareas</Data>
         <Data AD_Column_ID="84345" Column="UUID">55994941-d172-40ad-a33f-57f4e319bd32</Data>
         <Data AD_Column_ID="639" Column="Updated">2023-05-17 13:50:24.358</Data>
         <Data AD_Column_ID="640" Column="UpdatedBy">100</Data>
