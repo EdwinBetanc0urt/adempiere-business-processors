@@ -37,8 +37,8 @@ public class Request implements IProcessorEntity {
 	}
 	
 	/**
-	 * Set category
-	 * @param category
+	 * Set Alert Processor
+	 * @param processor
 	 * @return
 	 */
 	public Request withRequestProcessor(MRequestProcessor processor) {

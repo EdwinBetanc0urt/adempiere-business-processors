@@ -37,8 +37,8 @@ public class Accounting implements IProcessorEntity {
 	}
 	
 	/**
-	 * Set category
-	 * @param category
+	 * Set Alert Processor
+	 * @param processor
 	 * @return
 	 */
 	public Accounting withAccountingProcessor(MAcctProcessor processor) {
