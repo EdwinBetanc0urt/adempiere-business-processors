@@ -37,7 +37,7 @@ public class Schedule implements IProcessorEntity {
 	}
 	
 	/**
-	 * Set Alert Processor
+	 * Set Scheduler Processor
 	 * @param processor
 	 * @return
 	 */

@@ -38,7 +38,7 @@ public class Workflow implements IProcessorEntity {
 	}
 	
 	/**
-	 * Set Alert Processor
+	 * Set Workflow Processor
 	 * @param processor
 	 * @return
 	 */

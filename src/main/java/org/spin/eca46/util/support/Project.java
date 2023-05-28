@@ -36,7 +36,7 @@ public class Project implements IProcessorEntity {
 	}
 	
 	/**
-	 * Set Alert Processor
+	 * Set Project Processor
 	 * @param processor
 	 * @return
 	 */

@@ -37,7 +37,7 @@ public class Request implements IProcessorEntity {
 	}
 	
 	/**
-	 * Set Alert Processor
+	 * Set Request Processor
 	 * @param processor
 	 * @return
 	 */
