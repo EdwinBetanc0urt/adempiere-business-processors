@@ -52,8 +52,8 @@ public class CreateDKron implements ISetupDefinition {
 	private void createRegistration(Properties context, String transactionName) {
 		MADAppRegistration registration = new Query(context, MADAppRegistration.Table_Name, "EXISTS(SELECT 1 FROM AD_AppSupport s "
 				+ "WHERE s.AD_AppSupport_ID = AD_AppRegistration.AD_AppSupport_ID "
-				+ "AND s.ApplicationType = ?"
-				+ "AND s.IsActive = 'Y'"
+				+ "AND s.ApplicationType = ? "
+				+ "AND s.IsActive = 'Y' "
 				+ "AND s.Classname = ?)", transactionName)
 				.setParameters(APPLICATION_TYPE, DKron.class.getName())
 				.setClient_ID()
