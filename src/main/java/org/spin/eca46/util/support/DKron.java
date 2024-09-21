@@ -29,6 +29,7 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
 import org.adempiere.exceptions.AdempiereException;
+import org.compiere.model.MClient;
 import org.compiere.model.MScheduler;
 import org.compiere.util.Env;
 import org.compiere.util.Util;
@@ -53,6 +54,7 @@ public class DKron implements IExternalProcessor {
 	/**	Registration Id	*/
 	private int registrationId = 0;
 	private final String ADEMPIERE_ENDPOINT = "adempiere_endpoint";
+	private String clientUuid;
 	
 	
 	/**
@@ -64,6 +66,10 @@ public class DKron implements IExternalProcessor {
 		}
 		MADAppRegistration registration = MADAppRegistration.getById(Env.getCtx(), getAppRegistrationId(), null);
 		adempiereEndpoint = registration.getParameterValue(ADEMPIERE_ENDPOINT);
+		clientUuid = MClient.get(Env.getCtx(), Env.getAD_Client_ID(Env.getCtx())).getUUID();
+		if(Util.isEmpty(clientUuid)) {
+			throw new AdempiereException("@AD_Client_ID@ @UUID@ @IsMandatory@");
+		}
 		dKronHost = registration.getHost();
 		if(registration.getPort() > 0) {
 			dKronHost = dKronHost + ":" + registration.getPort();
@@ -128,7 +134,7 @@ public class DKron implements IExternalProcessor {
 	 */
 	private Map<String, Object> getRequestDefinition(IProcessorEntity processor) {
 		Map<String, Object> data = new HashMap<>();
-		data.put("name", processor.getIdentifier());
+		data.put("name", clientUuid + "_" + processor.getIdentifier());
 		data.put("displayname", processor.getDisplayName());
 		data.put("schedule", getSchedule(processor));
 		data.put("timezone", processor.getTimeZone());
@@ -152,6 +158,7 @@ public class DKron implements IExternalProcessor {
 	}
 	
 	private String getCompleteUrl(IProcessorEntity processor) {
+		
 		return getAdempiereService() + "/" + getProcessCode(processor) + "/" + Env.getAD_Client_ID(Env.getCtx()) + "/" + processor.getProcessorParameterId();
 	}
 	
