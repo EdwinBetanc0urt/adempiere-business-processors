@@ -185,7 +185,10 @@ public class SchedulerProcessor extends SchedulerProcessorAbstract {
 			StringBuffer errorsSending = new StringBuffer();
 			if (userIds.length > 0)  {
 				ProcessInfoUtil.setLogFromDB(info);
-				Arrays.asList(userIds).forEach(userId -> {
+				Arrays.asList(userIds)
+				.stream()
+				.filter(userId -> userId!= schedulerProcessor.getCreatedBy())
+				.forEach(userId -> {
 					AtomicReference<File> report = new AtomicReference<File>();
 					if (isReport) {
 						//	Report
