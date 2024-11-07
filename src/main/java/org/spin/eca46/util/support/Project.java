@@ -15,6 +15,7 @@
  ************************************************************************************/
 package org.spin.eca46.util.support;
 
+import java.sql.Timestamp;
 import java.util.TimeZone;
 
 import org.eevolution.model.MProjectProcessor;
@@ -95,7 +96,11 @@ public class Project implements IProcessorEntity {
 
 	@Override
 	public int getProcessorType() {
-		// TODO Auto-generated method stub
-		return 0;
+		return PROJECT;
+	}
+
+	@Override
+	public Timestamp getDateNextRun() {
+		return processor.getDateNextRun();
 	}
 }

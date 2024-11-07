@@ -15,6 +15,8 @@
  *************************************************************************************/
 package org.spin.eca46.util.support;
 
+import java.sql.Timestamp;
+
 /** 
  * 	Interface as contract for supported API
  *  @author Yamel Senih, ysenih@erpya.com , http://www.erpya.com
@@ -90,4 +92,10 @@ public interface IProcessorEntity {
 	 * @return
 	 */
 	public boolean isEnabled();
+	
+	/**
+	 * get Date Next Run from service
+	 * @return
+	 */
+	public Timestamp getDateNextRun();
 }

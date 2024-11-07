@@ -15,6 +15,7 @@
  ************************************************************************************/
 package org.spin.eca46.util.support;
 
+import java.sql.Timestamp;
 import java.util.TimeZone;
 
 import org.compiere.wf.MWorkflowProcessor;
@@ -96,5 +97,10 @@ public class Workflow implements IProcessorEntity {
 	@Override
 	public int getProcessorType() {
 		return WORKFLOW;
+	}
+
+	@Override
+	public Timestamp getDateNextRun() {
+		return processor.getDateNextRun();
 	}
 }

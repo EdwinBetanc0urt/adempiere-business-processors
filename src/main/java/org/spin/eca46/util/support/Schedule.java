@@ -15,6 +15,7 @@
  ************************************************************************************/
 package org.spin.eca46.util.support;
 
+import java.sql.Timestamp;
 import java.util.TimeZone;
 
 import org.compiere.model.MScheduler;
@@ -95,5 +96,10 @@ public class Schedule implements IProcessorEntity {
 	@Override
 	public int getProcessorType() {
 		return SCHEDULER;
+	}
+
+	@Override
+	public Timestamp getDateNextRun() {
+		return processor.getDateNextRun();
 	}
 }

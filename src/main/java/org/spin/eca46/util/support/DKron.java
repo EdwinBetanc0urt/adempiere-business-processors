@@ -15,10 +15,12 @@
  ************************************************************************************/
 package org.spin.eca46.util.support;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.TimeZone;
 
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
@@ -142,6 +144,11 @@ public class DKron implements IExternalProcessor {
 		data.put("retries", 0);
 		data.put("concurrency", "forbid");
 		data.put("executor", "http");
+		if(processor.getDateNextRun() != null) {
+			SimpleDateFormat dateFormatter = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'");
+			dateFormatter.setTimeZone(TimeZone.getTimeZone(processor.getTimeZone()));
+			data.put("next", dateFormatter.format(processor.getDateNextRun()));
+		}
 		Map<String, Object> executorConfig = new HashMap<>();
 		executorConfig.put("method", "POST");
 		executorConfig.put("url", getCompleteUrl(processor));

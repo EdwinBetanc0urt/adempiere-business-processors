@@ -15,6 +15,7 @@
  ************************************************************************************/
 package org.spin.eca46.util.support;
 
+import java.sql.Timestamp;
 import java.util.TimeZone;
 
 import org.compiere.model.MAcctProcessor;
@@ -95,5 +96,10 @@ public class Accounting implements IProcessorEntity {
 	@Override
 	public int getProcessorType() {
 		return ACCOUNTING;
+	}
+
+	@Override
+	public Timestamp getDateNextRun() {
+		return processor.getDateNextRun();
 	}
 }
